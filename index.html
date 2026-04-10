@@ -3,108 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eyael Negus | Designer</title>
+    <title>Eyael Negus | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="style.css">-->
 </head>
 <body>
 
     <header>
-        <div id="logo">
-            <img src="IMG_1421.svg" alt="Logo">
-        </div>
-        <nav>
+        <nav class="container">
+            <div id="logo">
+                <img src="IMG_1421.svg" alt="Eyael Negus Logo">
+            </div>
             <ul>
-                <li><a href="#hero">About Me</a></li>
+                <li><a href="#hero">About</a></li>
                 <li><a href="#work">Projects</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="axial-container">
+    <main class="container">
         <section id="hero">
-            <div class="axis-line"></div>
-            <div class="content">
-                <h1>Hi, I'm Eyael Negus</h1>
-                <p class="subtitle">Aspiring Graphic Designer, Video Editor & Web Designer</p>
-                <p>I create visually engaging digital experiences, combining design, video storytelling, and modern web technologies. My work focuses on crafting clean product designs, compelling visuals, and interactive web interfaces.</p>
-                <div class="cta-buttons">
-                    <a href="#work" class="btn">My Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+            <div class="hero-image">
+                <img src="IMG_1421.svg" alt="Eyael Negus Profile/Branding">
+            </div>
+            <div class="hero-text">
+                <h1>Hi, I'm <span class="accent-text">Eyael Negus</span></h1>
+                <p class="lead">Aspiring Graphic Designer, Video Editor & Web Designer</p>
+                <p>I create visually engaging digital experiences, combining design, video storytelling, and modern web technologies.</p>
+                <div class="cta-group">
+                    <a href="#work" class="btn primary">View Projects</a>
+                    <a href="#contact" class="btn secondary">Contact Me</a>
                 </div>
             </div>
         </section>
 
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="content">
+        <section id="experience" class="axial-section">
+            <h2 class="axis-label">Experience</h2>
+            <div class="axis-content">
                 <ul>
                     <li>Developed web applications using modern frameworks.</li>
-                    <li>Designed branding materials, posters, and digital graphics.</li>
-                    <li>Experienced for 6+ years.</li>
+                    <li>Designed branding materials and digital graphics.</li>
+                    <li>Professional experience for 6+ years.</li>
                 </ul>
             </div>
         </section>
 
-        <section id="work">
-            <h2>Featured Work</h2>
-            <div class="work-grid">
-                <article>
+        <section id="work" class="axial-section">
+            <h2 class="axis-label">Featured Work</h2>
+            <div class="axis-content work-grid">
+                <article class="project-card">
                     <h3>Project One</h3>
-                    <p>Brief description of the problem solved.</p>
-                    <a href="#">View Project</a>
+                    <p>Visual storytelling and branding solution.</p>
+                    <a href="#">Explore &rarr;</a>
                 </article>
-                <article>
+                <article class="project-card">
                     <h3>Project Two</h3>
-                    <p>Description of role and tech stack.</p>
-                    <a href="#">View Project</a>
-                </article>
-                <article>
-                    <h3>Project Three</h3>
-                    <p>Brief description of the project.</p>
-                    <a href="#">View Project</a>
+                    <p>Interactive web interface and UI design.</p>
+                    <a href="#">Explore &rarr;</a>
                 </article>
             </div>
         </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="content">
-                <ul class="skills-list">
-                    <li>HTML5 & Semantic Markup</li>
-                    <li>JavaScript (ES6+)</li>
-                    <li>DaVinci Resolve</li>
-                    <li>Photoshop</li>
-                    <li>PHP</li>
-                    <li>Supabase</li>
-                    <li>Project Management</li>
-                    <li>UI/UX Design</li>
-                </ul>
+        <section id="skills" class="axial-section">
+            <h2 class="axis-label">Skills</h2>
+            <div class="axis-content">
+                <div class="skills-tag-container">
+                    <span>DaVinci Resolve</span> <span>Photoshop</span> <span>PHP</span> 
+                    <span>Supabase</span> <span>UI/UX</span> <span>JS (ES6+)</span>
+                </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <div class="content">
-                <form action="https://formspree.io/f/mbdpeeyz" method="POST">
-                    <label>Your email: <input type="email" name="email"></label>
-                    <label>Your message: <textarea name="message"></textarea></label>
-                    <button type="submit">Send</button>
+        <section id="contact" class="axial-section">
+            <h2 class="axis-label">Contact</h2>
+            <div class="axis-content">
+                <form action="https://formspree.io/f/mbdpeeyz" method="POST" class="contact-form">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn primary">Send Message</button>
                 </form>
-                <p>or email on <a href="mailto:eyaeln11@gmail.com">eyaeln11@gmail.com</a></p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Eyael Negus. All rights reserved.</p>
-        <ul>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="https://github.com/eyaun">GitHub</a></li>
-            <li><a href="mailto:eyaeln11@gmail.com">Email</a></li>
-            <li><a href="#">Upwork</a></li>
-        </ul>
+        <div class="container">
+            <p>&copy; 2026 Eyael Negus</p>
+            <div class="footer-links">
+                <a href="https://github.com/eyaun">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Upwork</a>
+            </div>
+        </div>
     </footer>
 
 </body>
