@@ -1,93 +1,348 @@
-/* DESIGN SYSTEM */
+/* Eyael Negus Portfolio - Design System 
+  Style: Minimalist Modern / Axial Grid
+*/
+
 :root {
-    --primary: #3AB8F5; /* Blue */
-    --accent: #FF910F;  /* Orange */
-    --bg: #0F3040;      /* Dark Navy */
-    --surface: #163d50; /* Slightly lighter navy */
-    --text: #FFFFFF;
-    --text-dim: #9fb2ba;
+    --primary: #3AB8F5;       /* Sky Blue */
+    --accent: #FF910F;        /* Safety Orange (CTA) */
+    --bg-color: #0F3040;      /* Deep Navy Background */
+    --surface: #163d50;       /* Lighter Navy for Cards/Inputs */
+    --text-main: #FFFFFF;     /* Pure White */
+    --text-dim: #A0B0B8;      /* Muted Grey-Blue */
+    --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { 
-    background-color: var(--bg); 
-    color: var(--text); 
-    font-family: 'Open Sans', sans-serif; 
+/* 1. RESET & BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
-.accent-text { color: var(--primary); }
-
-/* HEADER */
-header { padding: 30px 0; }
-nav { display: flex; justify-content: space-between; align-items: center; }
-#logo img { height: 35px; filter: drop-shadow(0 0 5px rgba(58, 184, 245, 0.3)); }
-nav ul { display: flex; list-style: none; gap: 40px; }
-nav a { text-decoration: none; color: var(--text-dim); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-nav a:hover { color: var(--primary); }
-
-/* HERO: MINIMAL SIDE-BY-SIDE */
-.hero-flex { display: flex; align-items: center; gap: 60px; padding: 120px 0; }
-.hero-image { flex: 1; display: flex; justify-content: center; }
-.hero-image img { width: 100%; max-width: 300px; opacity: 0.9; }
-.hero-text { flex: 1.2; }
-h1 { font-family: 'Montserrat'; font-size: 4rem; line-height: 1; margin-bottom: 15px; }
-.lead { font-size: 1.4rem; font-weight: 600; color: var(--text); margin-bottom: 10px; }
-
-/* AXIAL GRID SYSTEM */
-.axial-section { display: flex; padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.05); }
-.axis-label { 
-    flex: 1; text-align: right; padding-right: 40px; 
-    font-family: 'Montserrat'; text-transform: uppercase; 
-    font-size: 0.75rem; color: var(--accent); letter-spacing: 3px;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
 }
-.axis-content { flex: 3; padding-left: 40px; border-left: 1px solid rgba(255,255,255,0.1); }
 
-/* VIDEO GRID */
-.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-.video-card { cursor: pointer; transition: 0.4s; }
-.thumbnail-placeholder { 
-    width: 100%; aspect-ratio: 16/9; background: var(--surface); 
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 4px; border-bottom: 3px solid var(--primary);
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-.card-info h3 { font-size: 1.1rem; margin-top: 15px; font-family: 'Montserrat'; }
-.card-info p { font-size: 0.85rem; color: var(--text-dim); }
-.video-card:hover { transform: translateY(-5px); }
-.video-card:hover .thumbnail-placeholder { background: #1e4f66; }
 
-/* SKILLS */
-.skills-flex { display: flex; gap: 40px; }
-.skill-group h3 { font-size: 0.9rem; color: var(--primary); text-transform: uppercase; margin-bottom: 5px; }
-.skill-group p { font-size: 0.9rem; color: var(--text-dim); }
+/* 2. NAVIGATION (Logo Integrated) */
+header {
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
 
-/* MODAL SYSTEM */
-.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(15, 48, 64, 0.95); }
-.modal-content { background: var(--surface); margin: 5% auto; padding: 40px; width: 80%; max-width: 800px; border-radius: 8px; position: relative; }
-.close { position: absolute; right: 20px; top: 10px; font-size: 30px; cursor: pointer; }
-.video-box { width: 100%; aspect-ratio: 16/9; background: #000; margin-top: 20px; display: flex; align-items: center; justify-content: center; }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-/* BUTTONS & FORM */
-.btn { padding: 12px 30px; text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; display: inline-block; }
-.primary { background: var(--primary); color: var(--bg); }
-.secondary { color: var(--primary); border: 1px solid var(--primary); margin-left: 10px; }
-.btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+#logo img {
+    height: 45px;
+    width: auto;
+    display: block;
+}
 
-.minimal-form .form-row { display: flex; gap: 10px; margin-bottom: 10px; }
-.minimal-form input, .minimal-form textarea { flex: 1; padding: 15px; background: var(--surface); border: none; color: white; font-family: inherit; }
-.minimal-form textarea { width: 100%; height: 100px; }
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
 
-/* FOOTER */
-footer { padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05); }
-.footer-content { display: flex; justify-content: space-between; align-items: center; color: var(--text-dim); font-size: 0.8rem; }
-.social-links a { margin-left: 20px; color: var(--primary); text-decoration: none; font-weight: bold; }
+nav a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .hero-flex { flex-direction: column; text-align: center; padding: 60px 0; }
-    .axial-section { flex-direction: column; }
-    .axis-label { text-align: left; margin-bottom: 10px; }
-    .axis-content { padding-left: 0; border-left: none; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
-    h1 { font-size: 2.5rem; }
+nav a:hover {
+    color: var(--primary);
+}
+
+/* 3. HERO SECTION (Side-by-Side) */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 100px 0;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 8px;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+}
+
+.hero-text {
+    flex: 1.2;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 span {
+    color: var(--primary);
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    margin-bottom: 25px;
+}
+
+/* 4. AXIAL SYSTEM & LAYOUT */
+.axial-section {
+    display: flex;
+    padding: 80px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.axis-label {
+    flex: 1;
+    text-align: right;
+    padding-right: 40px;
+    color: var(--primary);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    padding-top: 5px;
+}
+
+.axis-content {
+    flex: 3;
+    padding-left: 40px;
+    border-left: 1px solid var(--accent); /* The Visual Axis Line */
+}
+
+/* 5. PORTFOLIO GRID */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.video-card {
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.thumbnail-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid transparent;
+    transition: var(--transition);
+}
+
+.video-card:hover .thumbnail-placeholder {
+    background: #1e4f66;
+    border-bottom-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.video-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.video-card p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+/* 6. BUTTONS (Orange CTA focus) */
+.cta-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 14px 32px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: var(--transition);
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+.primary {
+    background-color: var(--accent);
+    color: #FFFFFF;
+}
+
+.secondary {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
+}
+
+/* 7. FORMS & INTERACTIVE Elements */
+.minimal-form input, 
+.minimal-form textarea {
+    width: 100%;
+    padding: 15px;
+    background: var(--surface);
+    border: 1px solid transparent;
+    color: white;
+    margin-bottom: 15px;
+    font-family: inherit;
+    border-radius: 3px;
+}
+
+.minimal-form input:focus, 
+.minimal-form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.minimal-form .form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.skills-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.skill-group h3 {
+    font-size: 0.85rem;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+/* 8. MODAL SYSTEM */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(10, 31, 41, 0.98);
+}
+
+.modal-content {
+    background: var(--surface);
+    margin: 5% auto;
+    padding: 50px;
+    width: 90%;
+    max-width: 850px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    font-size: 35px;
+    cursor: pointer;
+    color: var(--text-dim);
+}
+
+.close:hover { color: white; }
+
+/* 9. FOOTER */
+footer {
+    padding: 80px 0 40px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+}
+
+.social-links a {
+    color: var(--primary);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 700;
+}
+
+/* 10. RESPONSIVE DESIGN */
+@media (max-width: 850px) {
+    #hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 0;
+    }
+    
+    .hero-image { order: 1; }
+    .hero-text { order: 2; }
+    
+    .axial-section {
+        flex-direction: column;
+    }
+    
+    .axis-label {
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .axis-content {
+        padding-left: 0;
+        border-left: none;
+        border-top: 2px solid var(--accent);
+        padding-top: 25px;
+    }
+    
+    .hero-text h1 { font-size: 2.5rem; }
+    
+    nav ul { display: none; } /* Consider adding a burger menu for mobile later */
 }
