@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eyael Negus | Portfolio</title>
+    <title>Eyael Negus | Digital Designer & Editor</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -16,87 +16,118 @@
             </div>
             <ul>
                 <li><a href="#hero">About</a></li>
-                <li><a href="#work">Projects</a></li>
+                <li><a href="#work">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="container">
-        <section id="hero">
+        <section id="hero" class="hero-flex">
             <div class="hero-image">
-                <img src="IMG_1421.svg" alt="Eyael Negus Profile/Branding">
+                <img src="IMG_1421.svg" alt="Eyael Negus Profile">
             </div>
             <div class="hero-text">
-                <h1>Hi, I'm <span class="accent-text">Eyael Negus</span></h1>
-                <p class="lead">Aspiring Graphic Designer, Video Editor & Web Designer</p>
-                <p>I create visually engaging digital experiences, combining design, video storytelling, and modern web technologies.</p>
+                <h1>Eyael <span class="accent-text">Negus</span></h1>
+                <p class="lead">Modern Digital Solutions for Startups & Agencies.</p>
+                <p>Graphic Design • Video Editing • Web Development</p>
                 <div class="cta-group">
-                    <a href="#work" class="btn primary">View Projects</a>
-                    <a href="#contact" class="btn secondary">Contact Me</a>
+                    <a href="#work" class="btn primary">View Work</a>
+                    <a href="#contact" class="btn secondary">Hire Me</a>
                 </div>
-            </div>
-        </section>
-
-        <section id="experience" class="axial-section">
-            <h2 class="axis-label">Experience</h2>
-            <div class="axis-content">
-                <ul>
-                    <li>Developed web applications using modern frameworks.</li>
-                    <li>Designed branding materials and digital graphics.</li>
-                    <li>Professional experience for 6+ years.</li>
-                </ul>
             </div>
         </section>
 
         <section id="work" class="axial-section">
             <h2 class="axis-label">Featured Work</h2>
-            <div class="axis-content work-grid">
-                <article class="project-card">
-                    <h3>Project One</h3>
-                    <p>Visual storytelling and branding solution.</p>
-                    <a href="#">Explore &rarr;</a>
-                </article>
-                <article class="project-card">
-                    <h3>Project Two</h3>
-                    <p>Interactive web interface and UI design.</p>
-                    <a href="#">Explore &rarr;</a>
-                </article>
+            <div class="axis-content">
+                <div class="video-grid">
+                    <div class="video-card" onclick="openModal('Project One', 'Description of project')">
+                        <div class="thumbnail-placeholder">
+                             <span>Video Preview</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Project Title</h3>
+                            <p>Video Editing / Motion Graphics</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openModal('Project Two', 'Description of project')">
+                        <div class="thumbnail-placeholder">
+                             <span>Video Preview</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Project Title</h3>
+                            <p>UI/UX Design</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="skills" class="axial-section">
-            <h2 class="axis-label">Skills</h2>
-            <div class="axis-content">
-                <div class="skills-tag-container">
-                    <span>DaVinci Resolve</span> <span>Photoshop</span> <span>PHP</span> 
-                    <span>Supabase</span> <span>UI/UX</span> <span>JS (ES6+)</span>
+            <h2 class="axis-label">Capabilities</h2>
+            <div class="axis-content skills-flex">
+                <div class="skill-group">
+                    <h3>Design</h3>
+                    <p>Photoshop, UI/UX, Branding</p>
+                </div>
+                <div class="skill-group">
+                    <h3>Video</h3>
+                    <p>DaVinci Resolve, Storytelling</p>
+                </div>
+                <div class="skill-group">
+                    <h3>Web</h3>
+                    <p>HTML5, PHP, Supabase, JS</p>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="axial-section">
-            <h2 class="axis-label">Contact</h2>
+            <h2 class="axis-label">Connect</h2>
             <div class="axis-content">
-                <form action="https://formspree.io/f/mbdpeeyz" method="POST" class="contact-form">
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn primary">Send Message</button>
+                <form action="https://formspree.io/f/mbdpeeyz" method="POST" class="minimal-form">
+                    <div class="form-row">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <button type="submit" class="btn primary">Send</button>
+                    </div>
+                    <textarea name="message" placeholder="How can I help your business?" required></textarea>
                 </form>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container">
+        <div class="container footer-content">
             <p>&copy; 2026 Eyael Negus</p>
-            <div class="footer-links">
-                <a href="https://github.com/eyaun">GitHub</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">Upwork</a>
+            <div class="social-links">
+                <a href="https://github.com/eyaun">GH</a>
+                <a href="#">LI</a>
+                <a href="#">UW</a>
             </div>
         </div>
     </footer>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalVideoContainer">
+                <h2 id="modalTitle">Project Title</h2>
+                 <p id="modalDesc">Project details...</p>
+                 <div class="video-box">Project Video Placeholder</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, desc) {
+            document.getElementById('videoModal').style.display = "block";
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+        }
+        function closeModal() {
+            document.getElementById('videoModal').style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
